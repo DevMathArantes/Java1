@@ -45,6 +45,7 @@ public class Main {
         *   long : valores inteiros -9223372036854775808 a 9223372036854775807
         *   float : valores decimais com até 7 digitos
         *   double : valores decimais com até 15 digitos
+        *   String : conjunto de caracteres
 
         *Operadores:
 
@@ -58,6 +59,7 @@ public class Main {
         *   * : multiplicação
         *   / : divisão
         *   % : resto de divisão
+        *   (...) : resultado ... único (como na matemática)
 
         *   Comparação
         *   x == y : x igual y
@@ -75,11 +77,61 @@ public class Main {
         *   Incremento
         *   ++x : x = x + 1
 
+        *   Comandos
+        *
+        *   Função equal (retorna true se x = y)
+        *   x.equals(y)
+
+        *   Função format
+        *   System.out.println(String.format(...);
+        *   - Dentro da string "...", poderam ser colocados os %x, aonde x representa o tipo de dado a ser inserido,
+        *   as variáveis são consideradas consecutivamente dda seguinte maneira: "1: %s \n 2: %d \n 3: %f",minhaString,
+        *   meuInteiro, meuFloat
+        *   - o %f (ponto flutuante) também pode receber outro parâmetro, %.xf aonde x é igual ao número de casas
+        *   decimais após a virgúla que devem aparecer
+
+        *   Text block
+        *   ao dar valores de string com """...""" ao invés de "...", elas respeitarão os espaços e parágrafos
+        *   -para usar o format no text-block, siga a sintaxe:
+        *   """
+               String: %s
+               Inteiro: %d
+               Float: %.3f
+            """.formatted(minhaString, meuInteiro, meuFloat);
+
+
+        *   Casting (conversão de valores)
+        *   A conversão de valores pode ser feita de forma implícita, apenas ao usar o "=" e da seguinte forma
+        *   (explicita):
+        *   (x) (y)
+        *   x= tipo (byte, short, char, int, long, float ou double) e y o valor a ser convertido
+        *   Quando usar:
+        *   byte: int, long, float, double
+        *   short: int, long, float, double
+        *   char: int, long, float, double
+        *   int: long, float, double
+        *   long: float, double
+
         */
         System.out.println("Hello world!!!");
         System.out.println("Filme: A rede social");
         int anoLancamento = 2022;
         System.out.println("Ano de lançamento: "+anoLancamento);
-        boolean incluidoNoPlano = true ;
+        boolean incluidoNoPlano = true;
+        double media = (10.0 + 15.0 + 5.0 + 20.0)/3;
+        System.out.println(media);
+        String frase;
+        frase = "Aqui está minha frase.";
+        String texto;
+        texto = """
+                Título
+                
+                1parágrafo
+                2parágrago
+                3parágrafo  
+              """;
+        System.out.println(texto);
+        int mediaArredondada = (int) (media);
+        System.out.println(mediaArredondada);
     }
 }
